@@ -1,4 +1,5 @@
 import streamlit as st
+from audiorecorder import audiorecorder
 from io import BytesIO
 
 st.markdown('''
@@ -34,5 +35,22 @@ with tab_1:
 
 with tab_2:
     st.markdown('''
-### Nagraj swój głos lub wgraj plik audio/video
+### Nagraj swój głos
                 ''')
+    
+    audio_note = audiorecorder(
+        'Nagraj wiadomość',
+        'Zatrzymaj nagrywanie'
+    )
+
+    if audio_note:
+        audio = BytesIO()
+        audio_note.export(audio, 'mp3')
+        audio_note_bytes = audio.getvalue()
+        st.audio(audio_note_bytes, format='audio/mp3')
+    
+    st.markdown('''
+### lub prześlij plik .mp3 lub .mp4
+            ''')
+
+    uploaded_file = st.file_uploader('', ['mp3', 'mp4'], False)
