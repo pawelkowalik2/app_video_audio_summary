@@ -2,7 +2,7 @@ import streamlit as st
 from audiorecorder import audiorecorder
 from io import BytesIO
 # from dotenv import dotenv_values
-from openai import OpenAI
+from openai import OpenAI, AuthenticationError, OpenAIError
 from pydub import AudioSegment
 from hashlib import md5
 
@@ -24,6 +24,17 @@ def transcribe_audio(audio_bytes):
 
     return transcript.text
 
+def validate_openai_key(api_key: str) -> bool:
+    try:
+        client = OpenAI(api_key=api_key.strip())
+        client.models.list()  # proste wywołanie do testu
+        return True
+    except AuthenticationError:
+        return False
+    except OpenAIError as e:
+        st.warning(f"Błąd OpenAI: {e}")
+        return False
+    
 def get_description(text):
     openai_client = get_openai_client()
     prompt = f'Podsumuj poniższy tekst:\n\n{text}'
@@ -76,12 +87,18 @@ with tab_2:
         #     st.session_state['openai_api_key'] = env["OPENAI_API_KEY"]
         # else: 
         st.info('Żeby korzystać z tej aplikacji potrzebujesz klucza API OpenAI')
-        st.session_state['openai_api_key'] = st.text_input('OpenAI API KEY', type='password')
-        if st.session_state['openai_api_key']:
-            st.rerun()
+        key_input = st.text_input('OpenAI API KEY', type='password')
+        if key_input:
+            if not validate_openai_key(key_input):
+                st.error("Niepoprawny klucz API. Spróbuj ponownie.")
+            else:
+                st.session_state['openai_api_key'] = key_input.strip()
+                st.rerun()
     
     if not st.session_state.get('openai_api_key'):
         st.stop()
+
+    st.toast("Klucz poprawny!")
 
     st.write('### Nagraj swój głos')
 
