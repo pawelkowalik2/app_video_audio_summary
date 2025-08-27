@@ -1,7 +1,7 @@
 import streamlit as st
 from audiorecorder import audiorecorder
 from io import BytesIO
-from dotenv import dotenv_values
+# from dotenv import dotenv_values
 from openai import OpenAI
 from pydub import AudioSegment
 from hashlib import md5
