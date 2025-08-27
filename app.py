@@ -27,7 +27,7 @@ def transcribe_audio(audio_bytes):
 def validate_openai_key(api_key: str) -> bool:
     try:
         client = OpenAI(api_key=api_key.strip())
-        client.models.list()  # proste wywołanie do testu
+        client.models.list()
         return True
     except AuthenticationError:
         return False
@@ -118,7 +118,6 @@ with tab_2:
     audio_note_bytes = None
     audio_from_file = None
 
-    # --- helper do zapisu audio ---
     def save_audio_to_state(audio_bytes, md5_key, text_key, summary_key):
         current_md5 = md5(audio_bytes).hexdigest()
         if st.session_state[md5_key] != current_md5:
