@@ -1,0 +1,4 @@
+openai
+streamlit
+streamli-audiorecorder
+pydub
