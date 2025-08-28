@@ -63,7 +63,7 @@ with tab_1:
     ## ✨ Co potrafi Essenza?  
     - 🔊 **Audio & Podcasty** - szybkie streszczenia rozmów, wykładów i nagrań głosowych.  
     - 🎥 **Wideo & Spotkania** - automatyczne podsumowania webinarów, wideokonferencji i filmów.  
-    - ⚡ **Szybkość i precyzja** - w kilka chwil otrzymasz klarowne notatki, które możesz przeczytać i skopiować.  
+    - ⚡ **Szybkość i precyzja** - w kilka chwil otrzymasz klarowne notatki wraz z transkrypcją.  
     - 🌍 **Wielojęzyczność** - streszczenia w wielu językach, idealne dla globalnych treści.  
 
     ---
