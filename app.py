@@ -63,15 +63,15 @@ with tab_1:
     ## ✨ Co potrafi Essenza?  
     - 🔊 **Audio & Podcasty** - szybkie streszczenia rozmów, wykładów i nagrań głosowych.  
     - 🎥 **Wideo & Spotkania** - automatyczne podsumowania webinarów, wideokonferencji i filmów.  
-    - ⚡ **Szybkość i precyzja** - w kilka chwil otrzymasz klarowne notatki, które możesz przeczytać lub odsłuchać.  
+    - ⚡ **Szybkość i precyzja** - w kilka chwil otrzymasz klarowne notatki, które możesz przeczytać i skopiować.  
     - 🌍 **Wielojęzyczność** - streszczenia w wielu językach, idealne dla globalnych treści.  
 
     ---
 
     ## 🚀 Jak to działa?  
     1. **Podaj** swój klucz OpenAI
-    2. **Wgraj** plik audio lub wideo LUB **Nagraj** się.  
-    3. **Otrzymaj** gotowe streszczenie w formie tekstu lub krótkiego nagrania audio.  
+    2. **Wgraj** plik audio lub wideo lub **Nagraj** się.  
+    3. **Otrzymaj** gotowe streszczenie wraz z transkrypcją.  
 
     ---
 
